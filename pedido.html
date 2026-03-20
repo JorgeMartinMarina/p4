@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CarritoWeb - Pedido</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="cabecera">  </header>
+    <script>
+    fetch('marco.html')
+    .then(res => res.text())
+    .then(data => {
+    document.getElementById('cabecera').innerHTML =data;
+    });
+    </script>
+
+  <main class="contenedor">
+    <section>
+      <h2>Formulario de pedido</h2>
+      <p>
+        Completa este formulario para simular la compra de productos de la tienda.
+      </p>
+    </section>
+
+    <section>
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required>
+
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required>
+        </fieldset>
+
+        
+        <fieldset>
+            <legend>Tarjeta de Crédito/Débito</legend>
+
+            <label for="numero">Número de tarjeta</label>
+            <input 
+                type="text" id="numero" name="numero" minlength="16" maxlength="16" pattern="\d{16}" inputmode="numeric" required
+            >
+
+            <label for="fecha">Fecha de Caducidad</label>
+            <input type="date" id="fecha" name="fecha" min="2026-04-01" required>
+
+            <label for="cvv">CVV</label>
+            <input 
+                type="text" id="cvv" name="cvv" minlength="3" maxlength="3" pattern="\d{3}" inputmode="numeric" required
+            >
+            </fieldset>
+        
+
+        <fieldset>
+          <legend>Entrega</legend>
+
+          <label for="fecha">Fecha de entrega</label>
+          <input type="date" id="fecha" name="fecha" min="2026-04-01" required>
+
+          <label for="instrucciones">Instrucciones</label>
+          <textarea id="instrucciones" name="instrucciones" rows="4"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <input type="submit" value="Enviar">
+          <input type="reset" value="Resetear">
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
